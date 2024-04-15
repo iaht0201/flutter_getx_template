@@ -1,3 +1,5 @@
+import 'package:flutter_getx_template/app/modules/login/repository/login_responsitory.dart';
+import 'package:flutter_getx_template/app/modules/login/repository/login_responsitory_impl.dart';
 import 'package:get/get.dart';
 
 import '/app/data/repository/github_repository.dart';
@@ -9,6 +11,10 @@ class RepositoryBindings implements Bindings {
     Get.lazyPut<GithubRepository>(
       () => GithubRepositoryImpl(),
       tag: (GithubRepository).toString(),
+    );
+    Get.lazyPut<LoginRepository>(
+      () => LoginRepositoryImpl(),
+      tag: (LoginRepository).toString(),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_getx_template/app/routes/app_pages.dart';
+import 'package:get/get.dart';
 import '/app/modules/settings/widgets/item_settings_widgets.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
@@ -25,11 +27,13 @@ class SettingsView extends BaseView<SettingsController> {
         ),
         _getHorizontalDivider(),
         ItemSettings(
-          title: appLocalization.settingsLanguage,
-          prefixImage: 'ic_language.svg',
-          suffixImage: 'arrow_forward.svg',
-          onTap: _onLanguageItemClicked,
-        ),
+            title: appLocalization.settingsLanguage,
+            prefixImage: 'ic_language.svg',
+            suffixImage: 'arrow_forward.svg',
+            onTap: () {
+              print("language");
+              Get.toNamed(Routes.LANGUAGE);
+            }),
         _getHorizontalDivider(),
         ItemSettings(
           title: appLocalization.settingsFontSize,
@@ -57,5 +61,4 @@ class SettingsView extends BaseView<SettingsController> {
   void _onFontSizeItemClicked() {
     showToast('Font Size: Development in progress');
   }
-
 }

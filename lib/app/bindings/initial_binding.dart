@@ -1,3 +1,4 @@
+import 'package:flutter_getx_template/app/modules/login/bindings/login_binding.dart';
 import 'package:get/get.dart';
 
 import 'local_source_bindings.dart';
